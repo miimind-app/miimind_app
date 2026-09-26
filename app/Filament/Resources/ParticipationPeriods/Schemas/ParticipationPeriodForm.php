@@ -16,9 +16,14 @@ class ParticipationPeriodForm
                 Select::make('participant_id')
                     ->relationship('participant', 'reference')
                     ->required(),
-                TextInput::make('status')
-                    ->required()
-                    ->default('draft'),
+                Select::make('status')
+  		  ->options([
+		      'draft' => 'Draft',
+		      'active' => 'Active',
+		      'completed' => 'Completed',
+		      ])
+		      ->required()
+                      ->default('draft'),
                 DateTimePicker::make('started_at'),
                 DateTimePicker::make('ended_at'),
             ]);

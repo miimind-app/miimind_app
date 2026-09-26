@@ -17,6 +17,11 @@ class DesireBiographiesTable
                TextColumn::make('participationPeriod.participant.reference')
                                   ->label('Participant')
                                   ->searchable(),
+
+		TextColumn::make('body')
+   		 ->label('Desire Biography')
+		 ->limit(80)
+		 ->wrap(),
                 TextColumn::make('submitted_at')
                     ->dateTime()
                     ->sortable(),
